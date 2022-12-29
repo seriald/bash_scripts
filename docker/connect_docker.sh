@@ -1,3 +1,5 @@
+#! /bin/bash
+
 echo "Please copy a Container ID"
 sudo docker ps
 echo ""

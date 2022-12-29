@@ -1,3 +1,5 @@
+#! /bin/bash
+
 sudo docker ps
 read = container
 echo ""
