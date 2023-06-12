@@ -1,3 +1,4 @@
+#! /bin/bash
 echo "Please enter the URL to the video"
 read link
 
