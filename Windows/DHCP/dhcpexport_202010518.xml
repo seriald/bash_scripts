@@ -1,0 +1,1419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DHCPServer xmlns="http://schemas.microsoft.com/windows/DHCPServer">
+  <MajorVersion xmlns="">10</MajorVersion>
+  <MinorVersion xmlns="">0</MinorVersion>
+  <IPv4 xmlns="">
+    <ConflictDetectionAttempts>0</ConflictDetectionAttempts>
+    <NapEnabled>false</NapEnabled>
+    <NpsUnreachableAction>Full</NpsUnreachableAction>
+    <ActivatePolicies>true</ActivatePolicies>
+    <Classes>
+      <Class>
+        <Name>Default Routing and Remote Access Class</Name>
+        <Type>User</Type>
+        <Data>0x525241532e4d6963726f736f6674</Data>
+        <Description>User class for remote access clients</Description>
+      </Class>
+      <Class>
+        <Name>Default Network Access Protection Class</Name>
+        <Type>User</Type>
+        <Data>0x4d5346542051756172616e74696e65</Data>
+        <Description>Default special user class for Restricted Access clients</Description>
+      </Class>
+      <Class>
+        <Name>Default BOOTP Class</Name>
+        <Type>User</Type>
+        <Data>0x424f4f54502e4d6963726f736f6674</Data>
+        <Description>User class for BOOTP Clients</Description>
+      </Class>
+      <Class>
+        <Name>Microsoft Windows 2000 Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d53465420352e30</Data>
+        <Description>Microsoft vendor-specific options for Windows 2000 and above Clients</Description>
+      </Class>
+      <Class>
+        <Name>Microsoft Windows 98 Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d534654203938</Data>
+        <Description>Microsoft vendor-specific options for Windows 98 Clients</Description>
+      </Class>
+      <Class>
+        <Name>Microsoft Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d534654</Data>
+        <Description>Microsoft vendor-specific options applicable to all Windows Clients</Description>
+      </Class>
+    </Classes>
+    <OptionDefinitions>
+      <OptionDefinition>
+        <Name>Classless Static Routes</Name>
+        <OptionId>121</OptionId>
+        <Type>BinaryData</Type>
+        <MultiValued>false</MultiValued>
+        <Description>Destination, mask and router IP addresses in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Subnet Mask</Name>
+        <OptionId>1</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Subnet mask in network byte order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Time Offset</Name>
+        <OptionId>2</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>UTC offset in seconds</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Router</Name>
+        <OptionId>3</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of router addresses ordered by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Time Server</Name>
+        <OptionId>4</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of time server addresses, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Name Servers</Name>
+        <OptionId>5</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of name servers [IEN 116], by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>DNS Servers</Name>
+        <OptionId>6</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of DNS servers, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Log Servers</Name>
+        <OptionId>7</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of MIT_LCS UDP log servers on subnet</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Cookie Servers</Name>
+        <OptionId>8</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of cookie servers, RFC 865</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>LPR Servers</Name>
+        <OptionId>9</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of RFC 1179 servers, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Impress Servers</Name>
+        <OptionId>10</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of Imagen Impress Servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Resource Location Servers</Name>
+        <OptionId>11</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of RFC 887 ResLoc Servers on subnet, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Host Name</Name>
+        <OptionId>12</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Host name for client, RFC 1035 character set</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Boot File Size</Name>
+        <OptionId>13</OptionId>
+        <Type>Word</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Size of boot image file in 512-octet blocks</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Merit Dump File</Name>
+        <OptionId>14</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Path name for crash dump file</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>DNS Domain Name</Name>
+        <OptionId>15</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>DNS Domain name for client resolutions</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Swap Server</Name>
+        <OptionId>16</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Address of client's swap server</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Root Path</Name>
+        <OptionId>17</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Path name for client's root disk, char set NVT ASCII</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Extensions Path</Name>
+        <OptionId>18</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>tftp file for option extensions</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>IP Layer Forwarding</Name>
+        <OptionId>19</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Disable/enable IP packet forwarding on this client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Nonlocal Source Routing</Name>
+        <OptionId>20</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Disable/enable nonlocal datagrams</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Policy Filter Masks</Name>
+        <OptionId>21</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Destination/mask IP address pairs to filter source routes</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Max DG Reassembly Size</Name>
+        <OptionId>22</OptionId>
+        <Type>Word</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Maximum size datagram for reassembly by client; max 576</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Default IP Time-to-live</Name>
+        <OptionId>23</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Default TTL for client's use on outgoing DGs</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Path MTU Aging Timeout</Name>
+        <OptionId>24</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Timeout in seconds for aging Path MTU values; RFC 1191</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Path MTU Plateau Table</Name>
+        <OptionId>25</OptionId>
+        <Type>Word</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>MTU discovery sizes, sorted by size, all &gt;= 68</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>MTU Option</Name>
+        <OptionId>26</OptionId>
+        <Type>Word</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>MTU discovery size, &gt;= 68</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>All subnets are local</Name>
+        <OptionId>27</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client assumes that all subnets are local</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Broadcast Address</Name>
+        <OptionId>28</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Broadcast address</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Perform Mask Discovery</Name>
+        <OptionId>29</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should use ICMP for subnet mask discovery.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Mask Supplier Option</Name>
+        <OptionId>30</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should respond to subnet mask requests via ICMP.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Perform Router Discovery</Name>
+        <OptionId>31</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should solicit routers using RFC 1256.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Router Solicitation Address</Name>
+        <OptionId>32</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Address to use for router solicitation</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Static Route Option</Name>
+        <OptionId>33</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Destination/router address pairs, in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Trailer Encapsulation</Name>
+        <OptionId>34</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should negotiate use of trailers (RFC 983).</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>ARP Cache Timeout</Name>
+        <OptionId>35</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Timeout in seconds for ARP cache entries</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Ethernet Encapsulation</Name>
+        <OptionId>36</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>0=&gt;client should use ENet V2; 1=&gt; IEEE 802.3</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>TCP Default Time-to-live</Name>
+        <OptionId>37</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>TTL that client uses when sending TCP segments</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Keepalive Interval</Name>
+        <OptionId>38</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Keepalive timeout in seconds</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Keepalive Garbage</Name>
+        <OptionId>39</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Send garbage octet</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS Domain Name</Name>
+        <OptionId>40</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Name of Network Information Service domain</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS Servers</Name>
+        <OptionId>41</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Addresses of NIS servers on client's subnet</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NTP Servers</Name>
+        <OptionId>42</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Addresses of Network Time Protocol servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Vendor Specific Info</Name>
+        <OptionId>43</OptionId>
+        <Type>BinaryData</Type>
+        <MultiValued>false</MultiValued>
+        <Description>Embedded vendor-specific options</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>WINS/NBNS Servers</Name>
+        <OptionId>44</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>NBNS Address(es) in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NetBIOS over TCP/IP NBDD</Name>
+        <OptionId>45</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>NetBIOS over TCP/IP NBDD address(es) in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>WINS/NBT Node Type</Name>
+        <OptionId>46</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>0x1 = B-node, 0x2 = P-node, 0x4 = M-node, 0x8 = H-node</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NetBIOS Scope ID</Name>
+        <OptionId>47</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>NetBIOS over TCP/IP Scope ID</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>X Window System Font</Name>
+        <OptionId>48</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of X Windows font servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>X Window System Display</Name>
+        <OptionId>49</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of X Windows Display Mgr servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Lease</Name>
+        <OptionId>51</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Client IP address lease time in seconds</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Renewal (T1) Time Value</Name>
+        <OptionId>58</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Time between addr assignment to RENEWING state</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Rebinding (T2) Time Value</Name>
+        <OptionId>59</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Time from addr assignment to REBINDING state</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS+ Domain Name</Name>
+        <OptionId>64</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>The name of the client's NIS+ domain.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS+ Servers</Name>
+        <OptionId>65</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>A list of IP addresses indicating NIS+ servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Boot Server Host Name</Name>
+        <OptionId>66</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>TFTP boot server host name</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Bootfile Name</Name>
+        <OptionId>67</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Bootfile Name</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Mobile IP Home Agents</Name>
+        <OptionId>68</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Mobile IP home agents in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Simple Mail Transport Protocol (SMTP) Servers</Name>
+        <OptionId>69</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of SMTP servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Post Office Protocol (POP3) Servers</Name>
+        <OptionId>70</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of POP3 servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Network News Transport Protocol (NNTP) Servers</Name>
+        <OptionId>71</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of NNTP servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>World Wide Web (WWW) Servers</Name>
+        <OptionId>72</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of WWW servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Finger Servers</Name>
+        <OptionId>73</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of Finger servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Internet Relay Chat (IRC) Servers</Name>
+        <OptionId>74</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of IRC servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>StreetTalk Servers</Name>
+        <OptionId>75</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of StreetTalk servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>StreetTalk Directory Assistance (STDA) Servers</Name>
+        <OptionId>76</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of STDA servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Disable Netbios Option </Name>
+        <OptionId>1</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Netbios for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Release DHCP Lease On Shutdown Option</Name>
+        <OptionId>2</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Windows 2000 Clients to release DHCP lease on shutdown</Description>
+        <VendorClass>Microsoft Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Default Router Metric Base</Name>
+        <OptionId>3</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Default Router Base Metrics for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Disable Netbios Option </Name>
+        <OptionId>1</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Netbios for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Windows 2000 Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Release DHCP Lease On Shutdown Option</Name>
+        <OptionId>2</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Windows 2000 Clients to release DHCP lease on shutdown</Description>
+        <VendorClass>Microsoft Windows 2000 Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Default Router Metric Base</Name>
+        <OptionId>3</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Default Router Base Metrics for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Windows 2000 Options</VendorClass>
+      </OptionDefinition>
+    </OptionDefinitions>
+    <OptionValues>
+      <OptionValue>
+        <OptionId>81</OptionId>
+        <Value>7</Value>
+        <VendorClass />
+        <UserClass />
+      </OptionValue>
+    </OptionValues>
+    <Filters>
+      <Allow>false</Allow>
+      <Deny>true</Deny>
+    </Filters>
+    <Scopes>
+      <Scope>
+        <ScopeId>10.0.0.0</ScopeId>
+        <Name>Default</Name>
+        <SubnetMask>255.0.0.0</SubnetMask>
+        <StartRange>10.0.50.1</StartRange>
+        <EndRange>10.0.50.254</EndRange>
+        <LeaseDuration>8.00:00:00</LeaseDuration>
+        <State>Active</State>
+        <Type>Dhcp</Type>
+        <MaxBootpClients>4294967295</MaxBootpClients>
+        <NapEnable>false</NapEnable>
+        <Delay>0</Delay>
+        <NapProfile />
+        <Description />
+        <ActivatePolicies>true</ActivatePolicies>
+        <SuperScopeName />
+        <ExclusionRanges>
+          <IPRange>
+            <StartRange>10.0.50.1</StartRange>
+            <EndRange>10.0.50.4</EndRange>
+          </IPRange>
+          <IPRange>
+            <StartRange>10.0.50.7</StartRange>
+            <EndRange>10.0.50.7</EndRange>
+          </IPRange>
+        </ExclusionRanges>
+        <OptionValues>
+          <OptionValue>
+            <OptionId>3</OptionId>
+            <Value>10.1.0.1</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>6</OptionId>
+            <Value>10.0.1.9</Value>
+            <Value>10.0.1.10</Value>
+            <Value>10.0.50.47</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>15</OptionId>
+            <Value>vitori.org</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>51</OptionId>
+            <Value>691200</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>66</OptionId>
+            <Value>10.01.15</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+        </OptionValues>
+        <Reservations>
+          <Reservation>
+            <Name>proxy.vitori.org</Name>
+            <IPAddress>10.0.50.27</IPAddress>
+            <ClientId>00-0c-29-f9-e3-8d</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>rss.vitori.org</Name>
+            <IPAddress>10.0.50.31</IPAddress>
+            <ClientId>00-0c-29-15-e7-d4</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>to-the-extreme.vitori.org</Name>
+            <IPAddress>10.0.0.5</IPAddress>
+            <ClientId>b8-c7-5d-c9-75-3d</ClientId>
+            <Type>Both</Type>
+            <Description>Airport Extreme</Description>
+          </Reservation>
+          <Reservation>
+            <Name>pihole.vitori.org</Name>
+            <IPAddress>10.0.1.9</IPAddress>
+            <ClientId>00-0c-29-3e-d9-00</ClientId>
+            <Type>Both</Type>
+            <Description>Debian 8 - vm02.vitori.org</Description>
+          </Reservation>
+          <Reservation>
+            <Name>Roberts-iPhone.vitori.org</Name>
+            <IPAddress>10.0.50.45</IPAddress>
+            <ClientId>14-c2-13-d8-99-26</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>docker2.vitori.org</Name>
+            <IPAddress>10.0.50.40</IPAddress>
+            <ClientId>b6-22-0f-eb-00-02-00-00-ab-11-a7-dc-fc-e6-7a-05-f8-6d</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Render.vitori.org</Name>
+            <IPAddress>10.0.50.19</IPAddress>
+            <ClientId>00-50-56-a9-d7-79</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>android-4514fe4d45ad9ccd.vitori.org</Name>
+            <IPAddress>10.0.50.53</IPAddress>
+            <ClientId>00-04-4b-cc-ff-4e</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+            <OptionValues>
+              <OptionValue>
+                <OptionId>6</OptionId>
+                <Value>10.0.1.2</Value>
+                <Value>10.0.1.1</Value>
+                <VendorClass />
+                <UserClass />
+              </OptionValue>
+            </OptionValues>
+          </Reservation>
+          <Reservation>
+            <Name>ubuntu-server.vitori.org</Name>
+            <IPAddress>10.0.50.46</IPAddress>
+            <ClientId>b6-22-0f-eb-00-02-00-00-ab-11-22-1d-b4-ef-2e-36-0f-3f</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>nas01.vitori.org</Name>
+            <IPAddress>10.0.1.5</IPAddress>
+            <ClientId>00-11-32-b0-d2-b2</ClientId>
+            <Type>Both</Type>
+            <Description>Synology DS918+</Description>
+          </Reservation>
+          <Reservation>
+            <Name>nas01.vitori.org</Name>
+            <IPAddress>10.0.1.6</IPAddress>
+            <ClientId>00-11-32-b0-d2-b3</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>WIN-VOMSVRSH05O.vitori.org</Name>
+            <IPAddress>10.0.1.7</IPAddress>
+            <ClientId>00-0c-29-60-65-db</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>WIN-RC7C26CMUQ2.vitori.org</Name>
+            <IPAddress>10.0.1.8</IPAddress>
+            <ClientId>00-0c-29-c9-5a-73</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>BrotherGuest.vitori.org</Name>
+            <IPAddress>10.0.50.22</IPAddress>
+            <ClientId>40-5b-d8-7d-c4-d0</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>remote.vitori.org</Name>
+            <IPAddress>10.0.50.64</IPAddress>
+            <ClientId>29-b3-50-95-00-01-00-01-26-6f-dc-8d-00-0c-29-b3-50-95</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>WIN-PO7NQ3BS7JI.vitori.org</Name>
+            <IPAddress>10.0.50.47</IPAddress>
+            <ClientId>00-15-17-35-e2-24</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wemo.vitori.org</Name>
+            <IPAddress>10.0.51.1</IPAddress>
+            <ClientId>ec-1a-59-ec-76-c1</ClientId>
+            <Type>Both</Type>
+            <Description>Wemo Switch</Description>
+          </Reservation>
+          <Reservation>
+            <Name>wemo.vitori.org</Name>
+            <IPAddress>10.0.51.2</IPAddress>
+            <ClientId>ec-1a-59-68-f9-b1</ClientId>
+            <Type>Both</Type>
+            <Description>Wemo Switch</Description>
+          </Reservation>
+          <Reservation>
+            <Name>SonosZP.vitori.org</Name>
+            <IPAddress>10.0.52.3</IPAddress>
+            <ClientId>00-0e-58-c7-ce-ac</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a3bfe5.vitori.org</Name>
+            <IPAddress>10.0.51.8</IPAddress>
+            <ClientId>a8-bb-50-a3-bf-e5</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>SonosZB.vitori.org</Name>
+            <IPAddress>10.0.52.4</IPAddress>
+            <ClientId>00-0e-58-0a-a7-62</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Media</Name>
+            <IPAddress>10.0.53.1</IPAddress>
+            <ClientId>00-04-4b-cc-ff-4c</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>43SharpRokuTV.vitori.org</Name>
+            <IPAddress>10.0.53.2</IPAddress>
+            <ClientId>00-f4-8d-11-bb-d0</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>SonosZP.vitori.org</Name>
+            <IPAddress>10.0.52.2</IPAddress>
+            <ClientId>5c-aa-fd-c4-a3-9c</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_9f4b39.vitori.org</Name>
+            <IPAddress>10.0.51.11</IPAddress>
+            <ClientId>a8-bb-50-9f-4b-39</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>SonosZP.vitori.org</Name>
+            <IPAddress>10.0.52.1</IPAddress>
+            <ClientId>b8-e9-37-31-ac-c2</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a7c895.vitori.org</Name>
+            <IPAddress>10.0.51.4</IPAddress>
+            <ClientId>a8-bb-50-a7-c8-95</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a4eb2f.vitori.org</Name>
+            <IPAddress>10.0.51.6</IPAddress>
+            <ClientId>a8-bb-50-a4-eb-2f</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a61e1b.vitori.org</Name>
+            <IPAddress>10.0.51.5</IPAddress>
+            <ClientId>a8-bb-50-a6-1e-1b</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a05b2f.vitori.org</Name>
+            <IPAddress>10.0.51.9</IPAddress>
+            <ClientId>a8-bb-50-a0-5b-2f</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a4afdb.vitori.org</Name>
+            <IPAddress>10.0.51.7</IPAddress>
+            <ClientId>a8-bb-50-a4-af-db</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>wiz_a7c8b9.vitori.org</Name>
+            <IPAddress>10.0.51.3</IPAddress>
+            <ClientId>a8-bb-50-a7-c8-b9</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Master.vitori.org</Name>
+            <IPAddress>10.0.53.3</IPAddress>
+            <ClientId>b8-a1-75-4d-4c-49</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>MediaRoom.vitori.org</Name>
+            <IPAddress>10.0.53.4</IPAddress>
+            <ClientId>dc-3a-5e-65-09-18</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Samsung.vitori.org</Name>
+            <IPAddress>10.0.53.5</IPAddress>
+            <ClientId>d4-9d-c0-8f-de-fc</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>amazon-b36f9e8f1.vitori.org</Name>
+            <IPAddress>10.0.53.8</IPAddress>
+            <ClientId>74-75-48-88-f2-5c</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon FireTV device</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-21192716f.vitori.org</Name>
+            <IPAddress>10.0.52.6</IPAddress>
+            <ClientId>6c-56-97-dc-f9-81</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon Echo device</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-843c5c562.vitori.org</Name>
+            <IPAddress>10.0.52.8</IPAddress>
+            <ClientId>40-b4-cd-12-3a-88</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon Echo device</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-45024924b.vitori.org</Name>
+            <IPAddress>10.0.52.9</IPAddress>
+            <ClientId>fc-65-de-84-40-4e</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon Echo device</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-5c793f0ab.vitori.org</Name>
+            <IPAddress>10.0.52.7</IPAddress>
+            <ClientId>24-4c-e3-7c-ea-63</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon Echo device</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-3cce446b4.vitori.org</Name>
+            <IPAddress>10.0.52.5</IPAddress>
+            <ClientId>08-84-9d-9a-4e-36</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon Echo device</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-0b58503b3.vitori.org</Name>
+            <IPAddress>10.0.53.7</IPAddress>
+            <ClientId>f4-03-2a-c8-d9-a7</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon FireTV</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-2894724a9.vitori.org</Name>
+            <IPAddress>10.0.53.9</IPAddress>
+            <ClientId>f0-81-73-03-41-cc</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon FireTV</Description>
+          </Reservation>
+          <Reservation>
+            <Name>amazon-b9520ab85.vitori.org</Name>
+            <IPAddress>10.0.53.6</IPAddress>
+            <ClientId>68-9a-87-5f-2b-63</ClientId>
+            <Type>Both</Type>
+            <Description>Amazon FireTV</Description>
+          </Reservation>
+          <Reservation>
+            <Name>wiz_9f4add.vitori.org</Name>
+            <IPAddress>10.0.51.10</IPAddress>
+            <ClientId>a8-bb-50-9f-4a-dd</ClientId>
+            <Type>Both</Type>
+            <Description>Dinning Room Right</Description>
+            <OptionValues>
+              <OptionValue>
+                <OptionId>81</OptionId>
+                <Value>5</Value>
+                <VendorClass />
+                <UserClass />
+              </OptionValue>
+            </OptionValues>
+          </Reservation>
+          <Reservation>
+            <Name>XBOXONE.vitori.org</Name>
+            <IPAddress>10.0.53.10</IPAddress>
+            <ClientId>2c-54-91-1d-54-73</ClientId>
+            <Type>Both</Type>
+            <Description>Xbox One S</Description>
+          </Reservation>
+          <Reservation>
+            <Name>switch1</Name>
+            <IPAddress>10.0.53.12</IPAddress>
+            <ClientId>34-2f-bd-92-81-33</ClientId>
+            <Type>Both</Type>
+            <Description>Nintendo Switch</Description>
+          </Reservation>
+          <Reservation>
+            <Name>Chromecast</Name>
+            <IPAddress>10.0.53.11</IPAddress>
+            <ClientId>14-c1-4e-79-37-dc</ClientId>
+            <Type>Both</Type>
+            <Description>Google Chromecast with Google TV</Description>
+            <OptionValues>
+              <OptionValue>
+                <OptionId>81</OptionId>
+                <Value>5</Value>
+                <VendorClass />
+                <UserClass />
+              </OptionValue>
+            </OptionValues>
+          </Reservation>
+          <Reservation>
+            <Name>Philips-hue.vitori.org</Name>
+            <IPAddress>10.0.51.13</IPAddress>
+            <ClientId>00-17-88-24-8a-c9</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Koogeek-P1-26349B.vitori.org</Name>
+            <IPAddress>10.0.51.14</IPAddress>
+            <ClientId>00-7e-56-26-34-9b</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Google-Home-Mini.vitori.org</Name>
+            <IPAddress>10.0.52.10</IPAddress>
+            <ClientId>44-07-0b-43-a2-73</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>UnifiSwitch1</Name>
+            <IPAddress>10.0.0.11</IPAddress>
+            <ClientId>fc-ec-da-d0-38-59</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>UBNT.vitori.org</Name>
+            <IPAddress>10.0.0.12</IPAddress>
+            <ClientId>78-8a-20-f3-d4-45</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>UAP2</Name>
+            <IPAddress>10.0.0.13</IPAddress>
+            <ClientId>24-a4-3c-82-59-38</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>02AA01AB49120ERF.vitori.org</Name>
+            <IPAddress>10.0.51.12</IPAddress>
+            <ClientId>18-b4-30-0a-79-41</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>SipuraSPA.vitori.org</Name>
+            <IPAddress>10.0.0.10</IPAddress>
+            <ClientId>00-0e-08-28-b1-5a</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>AmazonPlug05H0.vitori.org</Name>
+            <IPAddress>10.0.51.15</IPAddress>
+            <ClientId>24-4c-e3-fd-6d-6f</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>HarmonyHub.vitori.org</Name>
+            <IPAddress>10.0.51.16</IPAddress>
+            <ClientId>c8-db-26-0e-ae-31</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>observium.vitori.org</Name>
+            <IPAddress>10.0.50.56</IPAddress>
+            <ClientId>9f-6e-85-24-00-02-00-00-ab-11-10-3c-0b-3c-25-c4-fe-34</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>WyzeCam1</Name>
+            <IPAddress>10.0.55.1</IPAddress>
+            <ClientId>2c-aa-8e-0f-e9-b7</ClientId>
+            <Type>Both</Type>
+            <Description>Wyze Cam - Hallway</Description>
+            <OptionValues>
+              <OptionValue>
+                <OptionId>81</OptionId>
+                <Value>5</Value>
+                <VendorClass />
+                <UserClass />
+              </OptionValue>
+            </OptionValues>
+          </Reservation>
+          <Reservation>
+            <Name>WDS.vitori.org</Name>
+            <IPAddress>10.0.1.15</IPAddress>
+            <ClientId>00-0c-29-d3-40-6b</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>VizioGuest</Name>
+            <IPAddress>10.0.53.13</IPAddress>
+            <ClientId>a4-8d-3b-f0-bb-a7</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>WyzeCam.vitori.org</Name>
+            <IPAddress>10.0.55.3</IPAddress>
+            <ClientId>2c-aa-8e-fe-b8-17</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>WyzeCam2</Name>
+            <IPAddress>10.0.55.2</IPAddress>
+            <ClientId>a4-da-22-32-67-71</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>deco-M5.vitori.org</Name>
+            <IPAddress>10.0.0.15</IPAddress>
+            <ClientId>a4-2b-b0-1c-42-0c</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>deco-M5.vitori.org</Name>
+            <IPAddress>10.0.0.14</IPAddress>
+            <ClientId>a4-2b-b0-1c-42-10</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>deco-M5.vitori.org</Name>
+            <IPAddress>10.0.0.16</IPAddress>
+            <ClientId>a4-2b-b0-1c-42-94</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>ILOMXQ517023D.vitori.org</Name>
+            <IPAddress>10.0.0.101</IPAddress>
+            <ClientId>c4-34-6b-b4-47-92</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>Roberts-iPhone.vitori.org</Name>
+            <IPAddress>10.0.50.9</IPAddress>
+            <ClientId>d6-f4-f9-fd-37-26</ClientId>
+            <Type>Dhcp</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>ILOMXQ517022X.vitori.org</Name>
+            <IPAddress>10.0.0.102</IPAddress>
+            <ClientId>fc-15-b4-18-fb-56</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>pihole2.vitori.org</Name>
+            <IPAddress>10.0.1.10</IPAddress>
+            <ClientId>56-9a-aa-f5-00-01-00-01-28-35-8a-91-00-50-56-9a-f8-7a</ClientId>
+            <Type>Both</Type>
+            <Description />
+            <OptionValues>
+              <OptionValue>
+                <OptionId>81</OptionId>
+                <Value>7</Value>
+                <VendorClass />
+                <UserClass />
+              </OptionValue>
+            </OptionValues>
+          </Reservation>
+        </Reservations>
+      </Scope>
+    </Scopes>
+  </IPv4>
+  <IPv6 xmlns="">
+    <Classes>
+      <Class>
+        <Name>Microsoft Windows Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d53465420352e30</Data>
+        <Description>Microsoft vendor-specific options for Windows Clients</Description>
+        <VendorId>311</VendorId>
+      </Class>
+    </Classes>
+    <OptionDefinitions>
+      <OptionDefinition>
+        <Name>SIP Server Domain Name List </Name>
+        <OptionId>21</OptionId>
+        <Type>String</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>Domain Name of SIP servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Domain Search List </Name>
+        <OptionId>24</OptionId>
+        <Type>String</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>Domain search list used by clients to resolve hostnames with DNS, by preference </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS Domain List </Name>
+        <OptionId>29</OptionId>
+        <Type>String</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>Domain names of NIS servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS+ Domain Name List </Name>
+        <OptionId>30</OptionId>
+        <Type>String</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>Domain names of NIS+ servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>SIP Servers IPv6 Address List </Name>
+        <OptionId>22</OptionId>
+        <Type>IPv6Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>IPv6 addresses of SIP servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>DNS Recursive Name Server IPv6 Address List </Name>
+        <OptionId>23</OptionId>
+        <Type>IPv6Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>IPv6 Addresses of DNS recursive name servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS IPv6 Address List </Name>
+        <OptionId>27</OptionId>
+        <Type>IPv6Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>IPv6 Addresses of NIS servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS+ IPv6 Address List </Name>
+        <OptionId>28</OptionId>
+        <Type>IPv6Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>IPv6 Addresses of NIS+ servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>SNTP Servers IPv6 Address List </Name>
+        <OptionId>31</OptionId>
+        <Type>IPv6Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue />
+        <Description>IPv6 Addresses of SNTP servers available to the client </Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Information Refresh Time </Name>
+        <OptionId>32</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>86400</DefaultValue>
+        <Description>This option specifies an upper bound for how long a client should wait before refreshing information retrieved from DHCPv6 Server </Description>
+        <VendorClass />
+      </OptionDefinition>
+    </OptionDefinitions>
+    <StatelessStore>
+      <Enabled>false</Enabled>
+      <PurgeInterval>2.00:00:00</PurgeInterval>
+    </StatelessStore>
+  </IPv6>
+</DHCPServer>
