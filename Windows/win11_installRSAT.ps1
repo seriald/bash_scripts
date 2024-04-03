@@ -10,10 +10,6 @@ For detailed Script execution:
 ============================================================================================
 #>
 
-$registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
-$name = "Start_ShowClassicMode"
-$value = "1"
-
 $admincheck = (New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 If ($admincheck -like "false") {
@@ -23,5 +19,18 @@ If ($admincheck -like "false") {
 
 Else {
     
-    Get-WindowsCompatibility -name RSAT* -online | Add-WindowsCapability -online
+    $rsatavail = Get-WindowsCompatibility -name RSAT* -online
+
+    ForEach ($rsat in $rsatavail){
+        $status = $rsat.state
+        $display = $rsat.displayname
+        if ($state -eq "Installed"){
+            Write-Host "$display already installed"
+        }
+
+        Else {
+            $rsatavail = Get-WindowsCompatibility -name $rsat -online
+            Write-host "Installed $display "
+        }
+    }
 }
