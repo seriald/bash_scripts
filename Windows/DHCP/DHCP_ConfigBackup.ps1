@@ -23,7 +23,7 @@ $Outfile = "$current\$(Get_Date)_DHCPExport.xml"
 if (Test-Path $OutFile -PathType Leaf) {
     Write-Host "Clearing previous output file $Outfile" -ForegroundColor Red
     Write-Host ""
-    del $outfile
+    rm $outfile
 }
 
 $confirm = Test-Connection $DHCPServer
