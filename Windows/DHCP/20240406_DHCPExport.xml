@@ -837,13 +837,6 @@
             </OptionValues>
           </Reservation>
           <Reservation>
-            <Name>USW_MINI.vitori.org</Name>
-            <IPAddress>10.0.0.18</IPAddress>
-            <ClientId>24-5a-4c-18-21-34</ClientId>
-            <Type>Both</Type>
-            <Description />
-          </Reservation>
-          <Reservation>
             <Name>XBOXONEX.vitori.org</Name>
             <IPAddress>10.0.53.14</IPAddress>
             <ClientId>2c-54-91-06-c3-32</ClientId>
@@ -2219,6 +2212,13 @@
                 <UserClass />
               </OptionValue>
             </OptionValues>
+          </Reservation>
+          <Reservation>
+            <Name>USW-Flex-Mini-Master</Name>
+            <IPAddress>10.0.0.20</IPAddress>
+            <ClientId>24-5a-4c-18-21-34</ClientId>
+            <Type>Both</Type>
+            <Description />
           </Reservation>
         </Reservations>
       </Scope>

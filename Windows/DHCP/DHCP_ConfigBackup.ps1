@@ -26,6 +26,7 @@ if (Test-Path $OutFile -PathType Leaf) {
     rm $outfile
 }
 
+Write-Host "Confirming $dhcpserver is reachable"
 $confirm = Test-Connection $DHCPServer
 
 if ($null -like $confirm) {
@@ -34,6 +35,7 @@ if ($null -like $confirm) {
 }
 
 Else {
+    Write-Host "Exporting $DHCPServer"
     Export-DhcpServer -ComputerName "$DHCPServer" -File $outfile
     #Backup-DhcpServer -ComputerName "$DHCPServer" -File $outfile
 
