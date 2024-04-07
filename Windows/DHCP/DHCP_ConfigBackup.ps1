@@ -1,11 +1,11 @@
 <#
 =============================================================================================
-Name:           
+Name:           Export DHCP Server configuration
 Description:    
-Version:        0.1
+Version:        0.2
 website:        
 Script by:      Robert Fleming
-Date:           
+Date:           2024-04-06
 For detailed Script execution: 
 ============================================================================================
 #>
