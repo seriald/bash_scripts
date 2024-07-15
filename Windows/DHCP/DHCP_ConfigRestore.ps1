@@ -15,6 +15,8 @@ function Get_Date {
     return "{0:yyyyMMdd}" -f (Get-Date)
     
 }
+
+$inputfile = $null
 $current = Get-Location
 $BackupPath = "$Current\$(Get_Date)_DHCPConfig"
 

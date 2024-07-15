@@ -18,7 +18,7 @@ function Get_Date {
 
 $DHCPServer = Read-Host "Please enter DHCP Server"
 $current = Get-Location
-$Outfile = "$current\$(Get_Date)_DHCPExport.xml"
+$Outfile = "$current\$(Get_Date)_$DHCPServer"+"_DHCPExport.xml"
 
 if (Test-Path $OutFile -PathType Leaf) {
     Write-Host "Clearing previous output file $Outfile" -ForegroundColor Red
