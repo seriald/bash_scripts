@@ -37,5 +37,6 @@ Else {
     Write-Host ""
 }
 
+Write-Host ""
 Write-Host "Flushing DNS cache" -foregroundcolor Green
 ipconfig /flushdns
