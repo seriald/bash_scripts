@@ -48,3 +48,5 @@ Else {
 Write-Host ""
 Write-Host "Flushing DNS cache" -foregroundcolor Green
 ipconfig /flushdns | out-null
+Clear-DnsClientCache
+#Clear-DnsServerCache
