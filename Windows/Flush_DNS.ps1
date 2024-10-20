@@ -16,20 +16,22 @@ Write-Host "Checking if Chrome or Edge are open" -ForegroundColor Cyan
 $ChromeCheck = Get-Process -name Chrome -ErrorAction SilentlyContinue
 $EdgeCheck = Get-Process -name msEdge -ErrorAction SilentlyContinue
 
-If ($Null -like $ChromeCheck){
+If ($Null -like $ChromeCheck) {
 }
 
 Else {
-Write-Host "Closing Chrome" -foregroundcolor Green
-get-process -name Chrome | stop-process
-Write-Host ""
+    Write-Host ""
+    Write-Host "Closing Chrome" -foregroundcolor Green
+    get-process -name Chrome | stop-process
+    Write-Host ""
 }
 
 
-If ($Null -like $EdgeCheck){
+If ($Null -like $EdgeCheck) {
 }
 
 Else {
+    Write-Host ""
     Write-Host "Closing Edge" -foregroundcolor Green
     get-process -name msEdge | stop-process
     Write-Host ""
