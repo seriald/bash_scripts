@@ -17,16 +17,15 @@ function Get_Date {
     
 }
 
-function Get-TimeStamp {
+function Get_TimeStamp {
     
-    return "[{0:MM/dd/yy} {0:HH:mm:ss}]" -f (Get-Date)
-    
+Get-Date -Format "yyyyMMdd_HHmmss"
 }
 
 #Variables
 
 $Server = "picklerick.vitori.org"
-
+$ExportPath = "\\nas01.vitori.org\docs\robert\docs\Configs\DNSBackups\"
 
 #Core
 
@@ -39,11 +38,11 @@ If ($admincheck -like "false") {
 
 Else {
 
-$Zones = Get-DnsServerZone | Where-Object { ($_.ZoneName -notlike "*arpa*") -and ($_.ZoneName -notlike "*msdcs*") -and ($_.ZoneName -notlike "*TrustAnchors*") } | Select-Object -ExpandProperty ZoneName
+  $Zones = Get-DnsServerZone | Where-Object { ($_.ZoneName -notlike "*arpa*") -and ($_.ZoneName -notlike "*msdcs*") -and ($_.ZoneName -notlike "*TrustAnchors*") } | Select-Object -ExpandProperty ZoneName
 
   ForEach ($Zone in $Zones) {
     $Outfolder = "c:\windows\system32\dns" 
-    $Outfile = "$(Get_Date)_$Zone"
+    $Outfile = "$(Get_TimeStamp)_$Zone"
 
     if (Test-Path "$OutFolder\$Outfile" -PathType Leaf) {
       Write-Host "Clearing previous output file $Outfile" -ForegroundColor Red
@@ -55,6 +54,7 @@ $Zones = Get-DnsServerZone | Where-Object { ($_.ZoneName -notlike "*arpa*") -and
 
   }
 
-  Write-Host "Exporting results to $OutFolder\$Outfile" -ForegroundColor Cyan
+  copy-item "$OutFolder\$Outfile" "$ExportPath\$Outfile"
+  Write-Host "Exporting results to $ExportPath\$Outfile" -ForegroundColor Cyan
 
 }
