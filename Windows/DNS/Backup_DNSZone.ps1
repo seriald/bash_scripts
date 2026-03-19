@@ -17,6 +17,12 @@ function Get_Date {
     
 }
 
+function Get-TimeStamp {
+    
+    return "[{0:MM/dd/yy} {0:HH:mm:ss}]" -f (Get-Date)
+    
+}
+
 #Variables
 
 $Server = "picklerick.vitori.org"
@@ -28,7 +34,7 @@ $admincheck = (New-Object Security.Principal.WindowsPrincipal([Security.Principa
 
 If ($admincheck -like "false") {
 
-  Write-Host "Run from Administrator Console"
+  Write-Host "Run from Administrator Console" -ForegroundColor Red
 }
 
 Else {
